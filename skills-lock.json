@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "agent-mcp-cli": {
+      "source": "jot-so/skills",
+      "sourceType": "github",
+      "skillPath": "skills/agent-mcp-cli/SKILL.md",
+      "computedHash": "4a96c818c2d1d001780f34f2b27d32a3862c7ae833bb33e2f3e69e264c09463a"
+    }
+  }
+}

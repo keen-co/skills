@@ -4,25 +4,25 @@ description: >-
   Configure MCP and use shell CLIs across agent runtimes. Use when setting up
   MCP servers, choosing between MCP vs skills vs shell CLI, detecting which agent
   runtime is active, or emitting MCP config for Claude Code, Cursor, Hermes,
-  OpenClaw, or Multica. Requires @keen/cli — run keen --help first.
+  OpenClaw, or Multica. Requires @jot/cli — run jot --help first.
 ---
 
 # Agent MCP + CLI
 
 ## Install the CLI first
 
-Skills teach workflow; **`@keen/cli`** owns the runtime matrix, MCP config, and recipes.
+Skills teach workflow; **`@jot/cli`** owns the runtime matrix, MCP config, and recipes.
 
 ```bash
-npm install -g @keen/cli
+npm install -g @jot/cli
 # or
-npx @keen/cli --help
+npx @jot/cli --help
 ```
 
 If this skill is missing from your agent:
 
 ```bash
-npx skills add keen-co/skills --skill agent-mcp-cli -y
+npx skills add jot-so/skills --skill agent-mcp-cli -y
 ```
 
 ## Always use CLI self-docs before guessing
@@ -30,17 +30,17 @@ npx skills add keen-co/skills --skill agent-mcp-cli -y
 The CLI is self-documenting. Prefer these commands over memorized syntax:
 
 ```bash
-keen --help
-keen runtime --help
-keen mcp --help
-keen runtime detect
-keen runtime matrix --json
-keen runtime show claude-code
-keen mcp recipe list
-keen mcp recipe show linear
-keen mcp emit --runtime claude-code --recipe linear
-keen mcp emit --runtime hermes --recipe linear
-keen mcp validate --runtime cursor
+jot --help
+jot runtime --help
+jot mcp --help
+jot runtime detect
+jot runtime matrix --json
+jot runtime show claude-code
+jot mcp recipe list
+jot mcp recipe show linear
+jot mcp emit --runtime claude-code --recipe linear
+jot mcp emit --runtime hermes --recipe linear
+jot mcp validate --runtime cursor
 ```
 
 ## MCP vs Skill vs Shell CLI
@@ -48,7 +48,7 @@ keen mcp validate --runtime cursor
 | Need | Use |
 | ---- | --- |
 | Teach workflow / conventions | **Skill** (this file) |
-| Runtime matrix, MCP config, recipes | **`keen` CLI** |
+| Runtime matrix, MCP config, recipes | **`jot` CLI** |
 | Call external system with schema'd tools | **MCP server** |
 | One-off terminal operation | **Shell CLI** (`gh`, `vercel`, `wrangler`, …) |
 
@@ -59,8 +59,8 @@ Only **Claude Code** consumes Multica `agent.mcp_config`. Other runtimes store o
 Before setting MCP via Multica for a non-Claude runtime:
 
 ```bash
-keen runtime show <runtime-id>
-keen mcp validate --runtime <runtime-id>
+jot runtime show <runtime-id>
+jot mcp validate --runtime <runtime-id>
 ```
 
 Configure MCP locally for Cursor, Hermes, OpenClaw, etc.
@@ -70,13 +70,13 @@ Configure MCP locally for Cursor, Hermes, OpenClaw, etc.
 ### Detect runtimes on this machine
 
 ```bash
-keen runtime detect
+jot runtime detect
 ```
 
 ### Emit MCP config for Claude Code
 
 ```bash
-keen mcp emit --runtime claude-code --recipe linear
+jot mcp emit --runtime claude-code --recipe linear
 ```
 
 Merge into `.mcp.json` or pass via `--mcp-config`.
@@ -84,7 +84,7 @@ Merge into `.mcp.json` or pass via `--mcp-config`.
 ### Emit MCP config for Hermes
 
 ```bash
-keen mcp emit --runtime hermes --recipe linear
+jot mcp emit --runtime hermes --recipe linear
 ```
 
 Merge into `~/.hermes/config.yaml` under `mcp_servers`.
@@ -92,11 +92,11 @@ Merge into `~/.hermes/config.yaml` under `mcp_servers`.
 ### List portfolio MCP recipes
 
 ```bash
-keen mcp recipe list
-keen mcp recipe show github
-keen mcp recipe show sentry
-keen mcp recipe show hermes
-keen mcp recipe show startupkit
+jot mcp recipe list
+jot mcp recipe show github
+jot mcp recipe show sentry
+jot mcp recipe show hermes
+jot mcp recipe show startupkit
 ```
 
 ## Security
@@ -104,7 +104,7 @@ keen mcp recipe show startupkit
 Run before adding MCP servers:
 
 ```bash
-keen mcp validate --runtime <runtime-id>
+jot mcp validate --runtime <runtime-id>
 ```
 
 - MCP servers execute arbitrary code — only add trusted servers
