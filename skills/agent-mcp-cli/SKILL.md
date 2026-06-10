@@ -4,19 +4,19 @@ description: >-
   Configure MCP and use shell CLIs across agent runtimes. Use when setting up
   MCP servers, choosing between MCP vs skills vs shell CLI, detecting which agent
   runtime is active, or emitting MCP config for Claude Code, Cursor, Hermes,
-  OpenClaw, or Multica. Requires @jot/cli — run jot --help first.
+  OpenClaw, or Multica. Requires -so/cli — run jot --help first.
 ---
 
 # Agent MCP + CLI
 
 ## Install the CLI first
 
-Skills teach workflow; **`@jot/cli`** owns the runtime matrix, MCP config, and recipes.
+Skills teach workflow; **`-so/cli`** owns the runtime matrix, MCP config, and recipes.
 
 ```bash
-npm install -g @jot/cli
+npm install -g -so/cli
 # or
-npx @jot/cli --help
+npx -so/cli --help
 ```
 
 If this skill is missing from your agent:

@@ -16,10 +16,10 @@ npx skills add jot-so/skills --skill agent-mcp-cli -y
 
 ## Prerequisites
 
-Most skills assume **`@jot/cli`** is installed:
+Most skills assume **`-so/cli`** is installed:
 
 ```bash
-npm install -g @jot/cli
+npm install -g -so/cli
 jot --help
 ```
 
@@ -27,4 +27,4 @@ jot --help
 
 | Skill | Description |
 | ----- | ----------- |
-| `agent-mcp-cli` | Configure MCP and use shell CLIs across agent runtimes (Claude Code, Cursor, Hermes, OpenClaw, …). Delegates to `@jot/cli`. |
+| `agent-mcp-cli` | Configure MCP and use shell CLIs across agent runtimes (Claude Code, Cursor, Hermes, OpenClaw, …). Delegates to `-so/cli`. |
