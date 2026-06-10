@@ -1,3 +1,5 @@
+[![skills.sh](https://skills.sh/b/keen-co/skills)](https://skills.sh/keen-co/skills)
+
 # Keen Skills
 
 Agent skills for working with Keen tooling and 01 portfolio operations.
